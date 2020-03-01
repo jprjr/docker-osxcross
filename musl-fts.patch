@@ -1,0 +1,12 @@
+diff --git a/tools/tools.sh b/tools/tools.sh
+index 91ca2eb..7d23703 100644
+--- a/tools/tools.sh
++++ b/tools/tools.sh
+@@ -444,6 +444,7 @@ function build_xar()
+ 
+   if [ $f_res -eq 1 ]; then
+     pushd $CURRENT_BUILD_PROJECT_NAME/xar &>/dev/null
++    LDFLAGS+=" -lfts" \
+     CFLAGS+=" -w" \
+       ./configure --prefix=$TARGET_DIR
+     $MAKE -j$JOBS
